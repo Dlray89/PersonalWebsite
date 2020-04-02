@@ -1,7 +1,6 @@
 import React from "react";
 import NavBar from "../compTools/navbar";
 import {
-  Avatar,
   Card,
   CardHeader,
   CardMedia,
@@ -11,14 +10,16 @@ import { makeStyles } from "@material-ui/core";
 import Expansion from "../compTools/expansion";
 import IntroTabs from "../compTools/introTabs";
 
+
+
 const useStyles = makeStyles({
   rootsub: {
-    border: "solid 1px red",
     margin: "5% auto",
-    width: "90%"
+    width: "90%",
+    background:"inherit"
   },
   root: {
-    border: "solid 2px purple",
+    border: "solid 2px black",
     background: "linear-gradient(to bottom, #1d4350, #a43931)"
   },
   CardHeader: {
@@ -64,10 +65,7 @@ const useStyles = makeStyles({
     border: "solid 2px blue",
     background: "linear-gradient(to left, #333333, #dd1818);"
   },
-  Avatar: {
-    margin: "1% auto",
-    background: "#dd1818"
-  }
+ 
 });
 
 function Home() {
@@ -76,7 +74,7 @@ function Home() {
     <div className={classes.root}>
       <NavBar />
       <Card className={classes.rootsub}>
-        <Avatar className={classes.Avatar}>DR</Avatar>
+        
         <CardHeader
           className={classes.CardHeader}
           title="Portfolio"

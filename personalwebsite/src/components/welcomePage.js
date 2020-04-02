@@ -1,40 +1,57 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { Card, CardHeader, CardActionArea, Button, Box} from "@material-ui/core"
+import { Avatar, Card, CardHeader, CardActionArea, Button, Box} from "@material-ui/core"
 import {makeStyles } from "@material-ui/core/styles"
+import David from "../images/david.jpg"
+import "./welcome.css"
+
+
 
 
 const useStyles = makeStyles({
     root:{
-        border: "solid 2px red",
-        width: "25%",
-        margin: "16% auto",
+       color:"white",
+        width: "40%",
+        margin: "10% auto",
         textAlign: "center",
-        padding: "2%"
+        padding: "2%",
+        background:"inherit"
     },
     box:{
-        border: "solid 2px red",
-        backgroundImage: "url('nate-grant-QQ9LainS6tI-unsplash')"
+        border: "solid 1px black",
+        
     },
     links:{
-        textDecoration: "none"
+        textDecoration: "none",
+        color:"white"
     },
-    mainContainer:{
-        background:"linear-gradient(to bottom, #333333, #dd1818)"
-    }
+   
+    Avatar: {
+        margin: "1% auto",
+        background: "#dd1818",
+        width:"18%",
+        height:"10%",
+      },
+      buttonContainer:{
+          display:"flex",
+          justifyContent:"space-evenly",
+          width:"50%",
+          margin:"0 auto"
+      }
 })
 
 function Welcome(){
     const classes = useStyles()
 
     return(
-        <div className={classes.mainContainer}>
+        <div className="mainContainer" >
         <Box className={classes.box}>
             <Card className={classes.root}>
+            <Avatar className={classes.Avatar} src={David}>DR</Avatar>
             <CardHeader title="David L. Ray Jr" subheader="FullStack Web Developer" />
-                <CardActionArea>
-                <Button variant="outlined" color="primary"><Link className={classes.links} to="/home">Explore</Link></Button>
-                <Button variant="outlined" color="primary"><Link className={classes.links}>Contact</Link></Button>
+                <CardActionArea className={classes.buttonContainer}>
+                <Button  variant="contained" color="primary"><Link className={classes.links} to="/home">Explore</Link></Button>
+                <Button  variant="contained" color="primary"><Link className={classes.links}>Contact</Link></Button>
                 </CardActionArea>
             </Card>
             </Box>

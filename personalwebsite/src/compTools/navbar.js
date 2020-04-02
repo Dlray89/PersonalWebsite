@@ -30,8 +30,8 @@ function NavBar(){
             </Typography>
             <Button color="inherit"><Link to="/home" className={classes.links} >Home</Link></Button>
             <Button color="inherit"><Link to="/projects" className={classes.links}>Projects</Link></Button>
-            <Button color="inherit"><Link to="/blogs"className={classes.links}>Blogs</Link></Button>
-            <Button color="inherit"><Link to="/contact"className={classes.links}xa>Contact</Link></Button>
+            <Button color="inherit"><Link to="/blogs" className={classes.links}>Blogs</Link></Button>
+            <Button color="inherit"><Link to="/contact" className={classes.links}>Contact</Link></Button>
         </Toolbar>
     </AppBar>
         </div>

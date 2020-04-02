@@ -2,6 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {Card,CardActionArea, CardActions, CardContent,CardHeader, CardMedia, Button, Typography} from '@material-ui/core';
 import Navbar from "../compTools/navbar"
+import Rick from "../images/rick.PNG"
+import ToDo from "../images/todo.PNG"
+import Sauti from "../images/sauti.PNG"
 
 
 const useStyles = makeStyles({
@@ -52,7 +55,7 @@ export default function ImgMediaCard() {
           component="img"
           alt="Rick and Morty Fan Page"
           height="140"
-          image=""
+          src={Rick}
           title="Rick and Morty Fan Page"
         />
         <CardContent>
@@ -78,22 +81,22 @@ export default function ImgMediaCard() {
       <CardActionArea>
         <CardMedia
           component="img"
-          alt="project2"
+          alt="The ToDo List"
           height="140"
-          image=""
-          title="project2"
+          src={ToDo}
+          title="The ToDo List"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            project2
+            The ToDo list: powered by Javascript
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-           Project2
+           The ToDo list: powered by Javascript
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary" href="https://dreamy-banach-3759ab.netlify.com/">
+        <Button size="small" color="primary" href="https://hungry-meninsky-73a0d3.netlify.com/">
           Visit site
         </Button>
         <Button size="small" color="primary">
@@ -109,20 +112,20 @@ export default function ImgMediaCard() {
           component="img"
           alt="project3"
           height="140"
-          image=""
+         src={Sauti}
           title="project3"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            project3
+            Sauti African Marketplace
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-           project3
+           Sauti African Marketplace
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary" href="https://dreamy-banach-3759ab.netlify.com/">
+        <Button size="small" color="primary" href="https://dlray89.github.io/SautiAfrica/">
           Visit site
         </Button>
         <Button size="small" color="primary">
