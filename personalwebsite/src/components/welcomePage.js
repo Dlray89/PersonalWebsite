@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { Card, CardHeader, CardActionArea, Button, Box} from "@material-ui/core"
 import {makeStyles } from "@material-ui/core/styles"
 
+
 const useStyles = makeStyles({
     root:{
         border: "solid 2px red",
@@ -17,6 +18,9 @@ const useStyles = makeStyles({
     },
     links:{
         textDecoration: "none"
+    },
+    mainContainer:{
+        background:"linear-gradient(to bottom, #333333, #dd1818)"
     }
 })
 
@@ -24,7 +28,7 @@ function Welcome(){
     const classes = useStyles()
 
     return(
-        <div>
+        <div className={classes.mainContainer}>
         <Box className={classes.box}>
             <Card className={classes.root}>
             <CardHeader title="David L. Ray Jr" subheader="FullStack Web Developer" />

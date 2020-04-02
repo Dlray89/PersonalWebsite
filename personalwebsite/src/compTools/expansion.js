@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+import React from "react";
+import PropTypes from "prop-types";
+import { makeStyles } from "@material-ui/core/styles";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -26,30 +26,30 @@ function TabPanel(props) {
 TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired
 };
 
 function a11yProps(index) {
   return {
     id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
+    "aria-controls": `vertical-tabpanel-${index}`
   };
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    background:"#333333",
-    color:"white",
-    display: 'flex',
+    background: "#333333",
+    color: "white",
+    display: "flex",
     height: 224,
-    border:"solid 1px #333333",
+    border: "solid 1px #333333"
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
-    border:"solid 1px #333333",
-    background:"linear-gradient(to left, #333333, #dd1818)"
-  },
+    border: "solid 1px #333333",
+    background: "linear-gradient(to left, #333333, #dd1818)"
+  }
 }));
 
 export default function VerticalTabs() {
@@ -69,32 +69,46 @@ export default function VerticalTabs() {
         onChange={handleChange}
         aria-label="Vertical tabs example"
         className={classes.tabs}
-       
       >
-        <Tab label="Skills" {...a11yProps(0)} />
-        <Tab label="Tools" {...a11yProps(1)} />
+        <Tab label="Front-End" {...a11yProps(0)} />
+        <Tab label="Back-End" {...a11yProps(1)} />
 
-        <Tab label="Education" {...a11yProps(2)} />
+        <Tab label="Tools" {...a11yProps(2)} />
         <Tab label="Social Media" {...a11yProps(3)} />
-       
       </Tabs>
       <TabPanel value={value} index={0}>
         -HTML3 <br />
         -CSS3 <br />
         -React <br />
         -Javascript <br />
-        -Redux
+        -Redux <br />
+        -Context API <br />
+        -AJAX/HTTP Requests
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        -Node.js <br />
+        -Express.js
+        <br />
+        -JSON web tokens
+        <br />
+        -Password hashing
+        <br />
+        -Back-end Middlewear
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        Styling Tools:
+        <br />
+        Material-UI <br />
+        Styled Componets <br />
+        Programming Tools:
+        <br />
+        Visual Studio Code
+        <br />
+        Gitpod
       </TabPanel>
       <TabPanel value={value} index={3}>
         Item Tfour
       </TabPanel>
-      
     </div>
   );
 }
