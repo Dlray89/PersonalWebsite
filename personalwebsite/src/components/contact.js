@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "@material-ui/core";
-import axios from "axios";
+// import axios from "axios";
 import Navbar from "../compTools/navbar";
 import Form from "./commentForm";
 import Bottomnav from "../compTools/bottomNav"
@@ -14,16 +14,16 @@ export default class Contact extends React.Component {
     };
   }
 
-  componentDidMount() {
-    axios
-      .get("http://localhost:8000/comments")
-      .then(res => {
-        this.setState({
-          comments: res.data
-        });
-      })
-      .catch(error => console.log("Sorry", error));
-  }
+//   componentDidMount() {
+//     axios
+//       .get("http://localhost:8000/comments")
+//       .then(res => {
+//         this.setState({
+//           comments: res.data
+//         });
+//       })
+//       .catch(error => console.log("Sorry", error));
+//   }
 
   render() {
     return (
