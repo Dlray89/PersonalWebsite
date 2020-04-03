@@ -1,6 +1,7 @@
 import React from "react"
 import { Card, CardHeader, makeStyles } from "@material-ui/core"
 import Navbar from "../compTools/navbar"
+import Bottomnav from "../compTools/bottomNav"
 
 const useStyles = makeStyles({
     root:{
@@ -21,9 +22,10 @@ function Blogs(){
         <div className={classes.mainContainer}>
         <Navbar />
             <Card className={classes.root}>
-                <CardHeader title="Blogs coming soon" subheader="Checkout my blogs on www.Medium.com" />
+                <CardHeader title="Blogs coming soon" subheader="Checkout my blogs on www.Medium.com/Dlray89" />
            
             </Card>
+            <Bottomnav />
         </div>
     )
 }

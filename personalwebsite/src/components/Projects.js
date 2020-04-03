@@ -2,9 +2,11 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {Card,CardActionArea, CardActions, CardContent,CardHeader, CardMedia, Button, Typography} from '@material-ui/core';
 import Navbar from "../compTools/navbar"
+import Bottomnav from "../compTools/bottomNav"
 import Rick from "../images/rick.PNG"
 import ToDo from "../images/todo.PNG"
 import Sauti from "../images/sauti.PNG"
+import Project from "../images/ProjectMY.PNG"
 
 
 const useStyles = makeStyles({
@@ -28,13 +30,13 @@ const useStyles = makeStyles({
   introCard:{
    
     textAlign:"center",
-    width:"90%",
+    width:"60%",
     margin:"3% auto",
     padding:"3%"
   }
 });
 
-export default function ImgMediaCard() {
+export default function Projects() {
   const classes = useStyles();
 
   return (
@@ -138,22 +140,22 @@ export default function ImgMediaCard() {
       <CardActionArea>
         <CardMedia
           component="img"
-          alt="project4"
+          alt="ProjectMY"
           height="140"
-          image=""
+          src={Project}
           title="project4"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            project4
+            ProjectMY
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-           Project4
+           ProjectMY application coming soon!
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary" href="https://dreamy-banach-3759ab.netlify.com/">
+        <Button size="small" color="primary" href="*">
           Visit site
         </Button>
         <Button size="small" color="primary">
@@ -162,6 +164,7 @@ export default function ImgMediaCard() {
       </CardActions>
     </Card>
     </div>
+    <Bottomnav />
     </div>
   );
 }

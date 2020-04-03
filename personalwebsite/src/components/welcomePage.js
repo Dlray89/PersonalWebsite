@@ -10,12 +10,12 @@ import "./welcome.css"
 
 const useStyles = makeStyles({
     root:{
-       color:"black - 50%",
+       color:"white",
         width: "32%",
         margin: "0% auto",
         textAlign: "center",
         padding: "2%",
-        background:"white"
+        background:"inherit"
     },
     box:{
         border: "solid 1px black",
@@ -28,11 +28,11 @@ const useStyles = makeStyles({
     },
    
     Avatar: {
-        margin: "9% auto",
+        margin: "5% auto",
         marginBottom:"2%",
         background: "#dd1818",
-        width:"10%",
-        height:"10%",
+        width:"20%",
+        height:"40%",
       },
       buttonContainer:{
           display:"flex",
@@ -54,7 +54,7 @@ function Welcome(){
             <CardHeader title="David L. Ray Jr" subheader="FullStack Web Developer" />
                 <CardActionArea className={classes.buttonContainer}>
                 <Button  variant="contained" color="primary"><Link className={classes.links} to="/home">Explore</Link></Button>
-                <Button  variant="contained" color="primary"><Link className={classes.links}>Contact</Link></Button>
+                <Button  variant="contained" color="primary"><Link className={classes.links} to="/contact">Contact</Link></Button>
                 </CardActionArea>
             </Card>
             </div>

@@ -4,8 +4,7 @@ const router = express.Router()
 
 const commentDb = require("../models/comments.model")
 
-router.get("/", (req,res) => {
-    res.redirect("/comments")
+router.get("/", (req,res) => { 
     commentDb
     .find()
     .then(comment => {

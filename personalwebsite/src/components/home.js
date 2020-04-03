@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "../compTools/navbar";
+import BottomNav from "../compTools/bottomNav"
 import {
   Card,
   CardHeader,
@@ -107,6 +108,7 @@ function Home() {
           </Typography>
         </Card>
       </div>
+      <BottomNav />
     </div>
   );
 }
