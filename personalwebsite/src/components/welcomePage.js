@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { Avatar, Card, CardHeader, CardActionArea, Button, Box} from "@material-ui/core"
+import { Avatar, Card, CardHeader,  Button} from "@material-ui/core"
 import {makeStyles } from "@material-ui/core/styles"
 import David from "../images/david.jpg"
 import "./welcome.css"
@@ -52,10 +52,10 @@ function Welcome(){
 
             <Card className={classes.root}>
             <CardHeader title="David L. Ray Jr" subheader="FullStack Web Developer" />
-                <CardActionArea className={classes.buttonContainer}>
+                <div className={classes.buttonContainer}>
                 <Button  variant="contained" color="primary"><Link className={classes.links} to="/home">Explore</Link></Button>
                 <Button  variant="contained" color="primary"><Link className={classes.links} to="/contact">Contact</Link></Button>
-                </CardActionArea>
+                </div>
             </Card>
             </div>
         </div>

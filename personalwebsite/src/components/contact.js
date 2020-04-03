@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardHeader } from "@material-ui/core";
+import { Card } from "@material-ui/core";
 import axios from "axios";
 import Navbar from "../compTools/navbar";
 import Form from "./commentForm";
