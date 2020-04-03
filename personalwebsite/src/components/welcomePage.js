@@ -10,15 +10,16 @@ import "./welcome.css"
 
 const useStyles = makeStyles({
     root:{
-       color:"white",
-        width: "40%",
-        margin: "10% auto",
+       color:"black - 50%",
+        width: "32%",
+        margin: "0% auto",
         textAlign: "center",
         padding: "2%",
-        background:"inherit"
+        background:"white"
     },
     box:{
         border: "solid 1px black",
+        height:"100vh",
         
     },
     links:{
@@ -27,9 +28,10 @@ const useStyles = makeStyles({
     },
    
     Avatar: {
-        margin: "1% auto",
+        margin: "9% auto",
+        marginBottom:"2%",
         background: "#dd1818",
-        width:"18%",
+        width:"10%",
         height:"10%",
       },
       buttonContainer:{
@@ -45,16 +47,17 @@ function Welcome(){
 
     return(
         <div className="mainContainer" >
-        <Box className={classes.box}>
+        <div className={classes.box}>
+        <Avatar className={classes.Avatar} src={David}>DR</Avatar>
+
             <Card className={classes.root}>
-            <Avatar className={classes.Avatar} src={David}>DR</Avatar>
             <CardHeader title="David L. Ray Jr" subheader="FullStack Web Developer" />
                 <CardActionArea className={classes.buttonContainer}>
                 <Button  variant="contained" color="primary"><Link className={classes.links} to="/home">Explore</Link></Button>
                 <Button  variant="contained" color="primary"><Link className={classes.links}>Contact</Link></Button>
                 </CardActionArea>
             </Card>
-            </Box>
+            </div>
         </div>
     )
 }
