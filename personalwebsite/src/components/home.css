@@ -1,0 +1,17 @@
+.introPanel{
+    border: solid 2px red;
+    width: 84%;
+    margin: 2% auto;
+    padding: 3%;
+    background-image: url("../images//deskwork.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+} 
+
+.resumeBox{
+    width: 84%;
+    margin: 2% auto;
+    text-align: center;
+}
+

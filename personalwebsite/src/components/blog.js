@@ -11,7 +11,7 @@ const useStyles = makeStyles({
     },
     mainContainer:{
         background:"linear-gradient(to bottom, #333333, #dd1818)",
-        height:"100vh"
+        height:"105vh"
     }
 })
 

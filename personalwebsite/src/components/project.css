@@ -1,0 +1,11 @@
+.introCard{
+    text-align:center;
+    width:60%;
+    margin:3% auto;
+    padding:3%;
+    border: solid 2px red;
+    background-image: url("../images//projectheader.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

@@ -29,7 +29,7 @@ function NavBar(){
             <Typography className={classes.title} variant="body1" component="h1">
                copyright:2020 by David Ray Jr
             </Typography>
-            <Button color="inherit"><Link to="/home" className={classes.links} >LinkIn</Link></Button>
+            <Button color="inherit" href="https://www.linkedin.com/in/dapperdave1914/">LinkIn</Button>
             <Button color="inherit"><Link to="/projects" className={classes.links}>Github</Link></Button>
             <Button color="inherit"><Link to="/blogs" className={classes.links}>Facebook</Link></Button>
             <Button color="inherit"><Link to="/contact" className={classes.links}>Medium</Link></Button>

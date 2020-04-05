@@ -3,25 +3,23 @@ import NavBar from "../compTools/navbar";
 import BottomNav from "../compTools/bottomNav"
 import {
   Card,
-  CardHeader,
-  CardMedia,
   Typography
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
-import Expansion from "../compTools/expansion";
+import Techtabs from "../compTools/tabs";
 import IntroTabs from "../compTools/introTabs";
+import ResumeExpansion from "../compTools/resumeexpansion"
+import "./home.css"
 
 
 
 const useStyles = makeStyles({
-  rootsub: {
-    margin: "5% auto",
-    width: "90%",
-    background:"inherit"
-  },
   root: {
     border: "solid 2px black",
     background: "linear-gradient(to bottom, #1d4350, #a43931)"
+  },
+  intro:{
+    color:"#dd1818",
   },
   CardHeader: {
     textAlign: "center"
@@ -30,16 +28,14 @@ const useStyles = makeStyles({
     border: "solid 1px black",
     width: "40%",
     boxSizing: "border-box",
-    background: "linear-gradient(to top, #333333, #dd1818);"
+    background: "linear-gradient(to top, #333333, #dd1818);",
+    margin:" 0 auto"
   },
   Cardbox2: {
     border: "solid 2px #333333",
     width: "40%",
-    background: "linear-gradient(to left, #333333, #dd1818);"
-  },
-  CardContainer: {
-    display: "flex",
-    justifyContent: "space-around"
+    background: "linear-gradient(to left, #333333, #dd1818);",
+    margin:"0 auto"
   },
   title: {
     padding: "3%",
@@ -66,6 +62,11 @@ const useStyles = makeStyles({
     border: "solid 2px blue",
     background: "linear-gradient(to left, #333333, #dd1818);"
   },
+  resumeTitle:{
+    border: "solid 2px yellow",
+    width:"43%",
+    margin:"2% auto"
+  }
  
 });
 
@@ -74,16 +75,14 @@ function Home() {
   return (
     <div className={classes.root}>
       <NavBar />
-      <Card className={classes.rootsub}>
-        
-        <CardHeader
-          className={classes.CardHeader}
-          title="Portfolio"
-          subheader="Projects/Tech Blogs"
-        />
 
-        <CardMedia />
-      </Card>
+      <div className="introPanel">
+        <Typography className={classes.intro} variant="h2" component="h1">
+          Tech Portfoilio
+        </Typography>
+
+       
+      </div>
 
       <div className={classes.CardContainer}>
         <Card className={classes.Cardbox}>
@@ -97,6 +96,9 @@ function Home() {
 
           <br />
         </Card>
+        <div>
+          <ResumeExpansion />
+        </div>
 
         <Card className={classes.Cardbox2}>
           <Typography variant="h5" className={classes.skillsTitle}>
@@ -104,10 +106,12 @@ function Home() {
           </Typography>
 
           <Typography variant="body1">
-            <Expansion />
+            <Techtabs />
           </Typography>
         </Card>
       </div>
+
+     
       <BottomNav />
     </div>
   );

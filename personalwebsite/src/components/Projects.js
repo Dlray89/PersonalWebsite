@@ -7,6 +7,7 @@ import Rick from "../images/rick.PNG"
 import ToDo from "../images/todo.PNG"
 import Sauti from "../images/sauti.PNG"
 import Project from "../images/ProjectMY.PNG"
+import "./project.css"
 
 
 const useStyles = makeStyles({
@@ -43,11 +44,11 @@ export default function Projects() {
       <div className={classes.root}>
       <Navbar />
       <div >
-          <Card className={classes.introCard}>
+          <div className="introCard" >
               <CardHeader title="Projects" subheader="Fullstack web development">
 
               </CardHeader>
-          </Card>
+          </div>
 
       </div>
       <div className={classes.cardContainer}>
@@ -106,6 +107,7 @@ export default function Projects() {
         </Button>
       </CardActions>
     </Card>
+
     </div>
     <div className={classes.cardContainer}>
     <Card className={classes.Card1}>
