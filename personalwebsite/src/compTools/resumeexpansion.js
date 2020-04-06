@@ -5,7 +5,7 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Resume from "../images/resumepic.PNG"
+import Resume from "../images/DavidRayResume.PNG"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -44,6 +44,7 @@ export default function SimpleExpansionPanel() {
         <ExpansionPanelDetails>
           <Typography>
            <img className={classes.resumepic} src={Resume} alt="Resume from david" />
+           <button><a download href={Resume}>DOWNLOAD</a></button>
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
