@@ -3,17 +3,25 @@ import { Card, CardHeader, makeStyles } from "@material-ui/core"
 import Navbar from "../compTools/navbar"
 import Bottomnav from "../compTools/bottomNav"
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root:{
         width:"30%",
         margin:"17% auto",
-        textAlign:"center"
+        textAlign:"center",
+        [theme.breakpoints.down("sm")]: {
+            margin:" 36% auto",
+            width:"80%"
+
+        }
     },
     mainContainer:{
         background:"linear-gradient(to bottom, #333333, #dd1818)",
-        height:"105vh"
+        height:"105vh",
+        [theme.breakpoints.down("sm")]: {
+            height: "100vh",
+        }
     }
-})
+}))
 
 
 function Blogs(){
