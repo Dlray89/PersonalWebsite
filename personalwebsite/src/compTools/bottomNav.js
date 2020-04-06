@@ -3,12 +3,16 @@ import { Link } from "react-router-dom"
 import { makeStyles } from "@material-ui/core"
 import { AppBar, Toolbar, Typography, Button } from "@material-ui/core"
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root:{
         flexGrow:1,
     },
     title:{
-        flexGrow:1
+        flexGrow:1,
+        [theme.breakpoints.down("sm")]: {
+            fontSize:"0.6rem"
+        }
+        
     },
     Appbar:{
         background: "linear-gradient(to left, #333333, #dd1818);",
@@ -16,9 +20,12 @@ const useStyles = makeStyles({
     },
     links:{
         textDecoration:"none",
-        color:"white"
+        color:"white",
+        [theme.breakpoints.down("sm")]: {
+            fontSize:"0.7rem"
+        }
     }
-})
+}))
 
 function NavBar(){
     const classes = useStyles()
@@ -29,7 +36,7 @@ function NavBar(){
             <Typography className={classes.title} variant="body1" component="h1">
                copyright:2020 by David Ray Jr
             </Typography>
-            <Button color="inherit" href="https://www.linkedin.com/in/dapperdave1914/">LinkIn</Button>
+            <Button color="inherit" className={classes.links} href="https://www.linkedin.com/in/dapperdave1914/">LinkIn</Button>
             <Button color="inherit"><Link to="/projects" className={classes.links}>Github</Link></Button>
             <Button color="inherit"><Link to="/blogs" className={classes.links}>Facebook</Link></Button>
             <Button color="inherit"><Link to="/contact" className={classes.links}>Medium</Link></Button>

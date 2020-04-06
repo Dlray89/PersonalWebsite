@@ -3,21 +3,27 @@ import { Link } from "react-router-dom"
 import { makeStyles } from "@material-ui/core"
 import { AppBar, Toolbar, Typography, Button } from "@material-ui/core"
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) =>({
     root:{
         flexGrow:1,
     },
     title:{
-        flexGrow:1
+        flexGrow:1,
+        [theme.breakpoints.down("sm")]: {
+            fontSize:"1rem"
+        }
     },
     Appbar:{
         background: "linear-gradient(to left, #333333, #dd1818);"
     },
     links:{
         textDecoration: "none",
-        color:"white"
+        color:"white",
+        [theme.breakpoints.down("sm")]: {
+            fontSize:"0.7rem"
+        }
     },
-})
+}))
 
 function NavBar(){
     const classes = useStyles()

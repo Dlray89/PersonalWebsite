@@ -11,12 +11,21 @@ import Resume from "../images/resumepic.PNG"
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '40%',
-    margin:"2% auto"
+    margin:"2% auto",
+    [theme.breakpoints.down("sm")]: {
+      width:"90%"
+    }
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
   },
+  resumepic:{
+    [theme.breakpoints.down("sm")]: {
+      width:"100%",
+      textAlign:"center"
+    }
+  }
 }));
 
 export default function SimpleExpansionPanel() {
@@ -34,7 +43,7 @@ export default function SimpleExpansionPanel() {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-           <img src={Resume} alt="Resume from david" />
+           <img className={classes.resumepic} src={Resume} alt="Resume from david" />
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>

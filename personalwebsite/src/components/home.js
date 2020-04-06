@@ -13,7 +13,7 @@ import "./home.css"
 
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     border: "solid 2px black",
     background: "linear-gradient(to bottom, #1d4350, #a43931)"
@@ -29,13 +29,20 @@ const useStyles = makeStyles({
     width: "40%",
     boxSizing: "border-box",
     background: "linear-gradient(to top, #333333, #dd1818);",
-    margin:" 0 auto"
+    margin:" 0 auto",
+    [theme.breakpoints.down("sm")] : {
+      width:"90%"
+    }
+    
   },
   Cardbox2: {
     border: "solid 2px #333333",
     width: "40%",
     background: "linear-gradient(to left, #333333, #dd1818);",
-    margin:"0 auto"
+    margin:"0 auto",
+    [theme.breakpoints.down("sm")] : {
+      width:"90%"
+    }
   },
   title: {
     padding: "3%",
@@ -68,7 +75,7 @@ const useStyles = makeStyles({
     margin:"2% auto"
   }
  
-});
+}));
 
 function Home() {
   const classes = useStyles();
@@ -85,6 +92,7 @@ function Home() {
       </div>
 
       <div className={classes.CardContainer}>
+
         <Card className={classes.Cardbox}>
           <Typography className={classes.title} variant="h5">
             Career Aspriations
