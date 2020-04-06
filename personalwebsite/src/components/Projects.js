@@ -10,23 +10,36 @@ import Project from "../images/ProjectMY.PNG"
 import "./project.css"
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root:{
         background:"linear-gradient(to bottom, #333333, #dd1818)",
     },
   Card1: {
   
    width:"25%",
-   margin:" 2% 0 0 0"
+   margin:" 2% 0 0 0",
+   [theme.breakpoints.down("sm")]: {
+    margin:"0 auto",
+    width:"90%"
+},
   },
   Card2:{
    
     width:"25%",
-    margin:" 2% 0 0 0"
+    margin:" 2% 0 0 0",
+    [theme.breakpoints.down("sm")]: {
+      margin:"2% auto",
+      width:"90%"
+  }
   },
   cardContainer:{
       display:"flex",
-      justifyContent:"space-evenly"
+      justifyContent:"space-evenly",
+      [theme.breakpoints.down("sm")]: {
+        display:"flex",
+        flexDirection:"column",
+        margin:"0 auto"
+    }
   },
   introCard:{
    
@@ -35,7 +48,7 @@ const useStyles = makeStyles({
     margin:"3% auto",
     padding:"3%"
   }
-});
+}));
 
 export default function Projects() {
   const classes = useStyles();
@@ -45,7 +58,7 @@ export default function Projects() {
       <Navbar />
       <div >
           <div className="introCard" >
-              <CardHeader title="Projects" subheader="Fullstack web development">
+              <CardHeader title="Projects">
 
               </CardHeader>
           </div>
