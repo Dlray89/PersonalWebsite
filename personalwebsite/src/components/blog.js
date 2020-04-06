@@ -9,8 +9,9 @@ const useStyles = makeStyles((theme) => ({
         margin:"17% auto",
         textAlign:"center",
         [theme.breakpoints.down("sm")]: {
-            margin:" 36% auto",
+            margin:" 50% auto",
             width:"80%"
+            
 
         }
     },
@@ -18,7 +19,12 @@ const useStyles = makeStyles((theme) => ({
         background:"linear-gradient(to bottom, #333333, #dd1818)",
         height:"105vh",
         [theme.breakpoints.down("sm")]: {
-            height: "90vh",
+            height: "100vh",
+        }
+    },
+    main:{
+        [theme.breakpoints.down("sm")]:{
+            height:"100vh"
         }
     }
 }))
@@ -27,13 +33,16 @@ const useStyles = makeStyles((theme) => ({
 function Blogs(){
     const classes = useStyles()
     return(
+        <div className={classes.main}>
         <div className={classes.mainContainer}>
         <Navbar />
             <Card className={classes.root}>
                 <CardHeader title="Blogs coming soon" subheader="Checkout my blogs on www.Medium.com/Dlray89" />
            
             </Card>
-            <Bottomnav />
+            
+        </div>
+        <Bottomnav />
         </div>
     )
 }
