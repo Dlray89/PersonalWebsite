@@ -8,39 +8,54 @@ import "./welcome.css"
 
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root:{
-       color:"white",
-        width: "32%",
-        margin: "0% auto",
-        textAlign: "center",
-        padding: "2%",
-        background:"inherit"
-    },
-    box:{
-        border: "solid 1px black",
-        height:"100vh",
-        
-    },
-    links:{
-        textDecoration: "none",
-        color:"white"
-    },
-   
-    Avatar: {
-        margin: "5% auto",
-        marginBottom:"2%",
-        background: "#dd1818",
-        width:"20%",
-        height:"40%",
-      },
-      buttonContainer:{
-          display:"flex",
-          justifyContent:"space-evenly",
-          width:"50%",
-          margin:"0 auto"
-      }
-})
+        color:"white",
+         width: "32%",
+         margin: "0% auto",
+         textAlign: "center",
+         padding: "2%",
+         background:"inherit",
+         [theme.breakpoints.down("sm")] : {
+             color:"white",
+             width:"80%"
+         }
+     },
+     box:{
+         border: "solid 1px black",
+         height:"100vh",
+         
+     },
+     links:{
+         textDecoration: "none",
+         color:"white"
+     },
+    
+     Avatar: {
+         margin: "5% auto",
+         marginBottom:"2%",
+         background: "#dd1818",
+         width:"20%",
+         height:"40%",
+         [theme.breakpoints.down("sm")] : {
+             
+             width:"40%"
+         }
+       },
+       buttonContainer:{
+           display:"flex",
+           justifyContent:"space-evenly",
+           width:"50%",
+           margin:"0 auto",
+           [theme.breakpoints.down("sm")] : {
+            
+            width:"60%"
+        }
+       }
+}))
+
+
+
 
 function Welcome(){
     const classes = useStyles()
