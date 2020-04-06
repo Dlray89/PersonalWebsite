@@ -17,8 +17,8 @@ const useStyles = makeStyles((theme) => ({
          padding: "2%",
          background:"inherit",
          [theme.breakpoints.down("sm")] : {
-             color:"white",
-             width:"80%"
+            margin:"0 auto",
+             width:"80%",
          }
      },
      box:{
@@ -38,8 +38,10 @@ const useStyles = makeStyles((theme) => ({
          width:"20%",
          height:"40%",
          [theme.breakpoints.down("sm")] : {
-             
-             width:"40%"
+            margin:"0% auto",
+            marginTop:"20%",
+             width:"30%",
+             height:"30%"
          }
        },
        buttonContainer:{
@@ -48,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
            width:"50%",
            margin:"0 auto",
            [theme.breakpoints.down("sm")] : {
-            
+            margin:"0 auto",
             width:"60%"
         }
        }
