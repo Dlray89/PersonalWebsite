@@ -62,7 +62,9 @@ class Contact extends React.Component{
 
     render(){
         const { name, email, comment} = this.state 
+
         const { classes } = this.props
+        
         return(
             <div>
                 <Card className={classes.root}>

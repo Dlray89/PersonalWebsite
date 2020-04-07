@@ -41,6 +41,7 @@ function NavBar(){
             document.querySelector('#font-awesome-css'),
         );
     }, [])
+    
     return( 
         <div className={classes.root}>
     <AppBar className={classes.Appbar} position="static">

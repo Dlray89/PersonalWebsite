@@ -99,9 +99,9 @@ function Home() {
             Career Aspriations
           </Typography>
 
-          <Typography className={classes.subtitle} variant="body1" gutterBottom>
+          <div className={classes.subtitle}>
             <IntroTabs />
-          </Typography>
+          </div>
 
           <br />
         </Card>
@@ -114,9 +114,9 @@ function Home() {
             Fullstack Tech Arsenal
           </Typography>
 
-          <Typography variant="body1">
+          <div>
             <Techtabs />
-          </Typography>
+          </div>
         </Card>
       </div>
 
