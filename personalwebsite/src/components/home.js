@@ -62,7 +62,8 @@ const useStyles = makeStyles((theme) => ({
     border: "solid 1px #333333",
     textAlign: "center",
     padding: "3%",
-    background: "linear-gradient(to left, #333333, #dd1818);"
+    background: "linear-gradient(to left, #333333, #dd1818);",
+    color:"white"
   },
   subtitle2: {
     padding: "1%",
@@ -85,7 +86,7 @@ function Home() {
 
       <div className="introPanel">
         <Typography className={classes.intro} variant="h2" component="h1">
-          Tech Portfoilio
+          TECH PORTFOLIO
         </Typography>
 
        

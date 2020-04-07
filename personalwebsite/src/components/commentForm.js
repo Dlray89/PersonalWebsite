@@ -66,7 +66,7 @@ class Contact extends React.Component{
         return(
             <div>
                 <Card className={classes.root}>
-                <CardHeader style={{border:"solid 1px #333333", background:"linear-gradient(to right, #333333, #dd1818)"}} title="Need to reach me?" subheader="Email: dlrayjr89@gmail.com - Phone: (614)-681.0179"/>
+                <CardHeader style={{border:"solid 1px #333333", background:"linear-gradient(to right, #333333, #dd1818)", color:"white"}} title="Need to reach me?" subheader="Email: dlrayjr89@gmail.com - Phone: (614)-681.0179"/>
                 <Typography variant="h5" component="h1" >
                     Drop me a comment
                 </Typography>

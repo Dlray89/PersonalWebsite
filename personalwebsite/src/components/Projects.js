@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {Card,CardActionArea, CardActions, CardContent,CardHeader, CardMedia, Button, Typography} from '@material-ui/core';
+import {Card,CardActionArea, CardActions, CardContent, CardMedia, Button, Typography} from '@material-ui/core';
 import Navbar from "../compTools/navbar"
 import Bottomnav from "../compTools/bottomNav"
 import Rick from "../images/rick.PNG"
@@ -47,6 +47,11 @@ const useStyles = makeStyles((theme) => ({
     width:"60%",
     margin:"3% auto",
     padding:"3%"
+  },
+  header:{
+    
+    color:"#dd1818",
+    fontSize:"2rem"
   }
 }));
 
@@ -57,10 +62,8 @@ export default function Projects() {
       <div className={classes.root}>
       <Navbar />
       <div >
-          <div className="introCard" >
-              <CardHeader title="Projects">
-
-              </CardHeader>
+          <div className="introCard">
+              <Typography className={classes.header} variant="h2" component="h1"> PROJECTS </Typography>
           </div>
 
       </div>

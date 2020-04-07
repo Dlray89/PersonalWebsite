@@ -3,6 +3,7 @@
     width:60%;
     margin:3% auto;
     padding:3%;
+    border: solid 2px #dd1818;
     background-image: url("../images//projectheader.jpg");
     background-size: cover;
     background-position: center;

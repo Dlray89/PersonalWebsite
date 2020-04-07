@@ -1,7 +1,7 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { loadCSS } from "fg-loadcss"
 import { makeStyles } from "@material-ui/core"
-import { AppBar, Toolbar, Typography, Button } from "@material-ui/core"
+import { AppBar, CardActionArea, Toolbar, Typography, Icon } from "@material-ui/core"
 
 const useStyles = makeStyles((theme) => ({
     root:{
@@ -24,22 +24,36 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("sm")]: {
             fontSize:"0.7rem"
         }
+    },
+    Icons:{
+        display:"flex",
+        justifyContent:"space-evenly",
+        width:"20%"
     }
 }))
 
 function NavBar(){
     const classes = useStyles()
+
+    React.useEffect(() => {
+        loadCSS(
+            'https://use.fontawesome.com/releases/v5.12.0/css/all.css',
+            document.querySelector('#font-awesome-css'),
+        );
+    }, [])
     return( 
         <div className={classes.root}>
     <AppBar className={classes.Appbar} position="static">
         <Toolbar>
             <Typography className={classes.title} variant="body1" component="h1">
-               copyright:2020 by David Ray Jr
+               site design &copy; 2020 dapthedev, inc
             </Typography>
-            <Button color="inherit" className={classes.links} href="https://www.linkedin.com/in/dapperdave1914/">LinkIn</Button>
-            <Button color="inherit"><Link to="/projects" className={classes.links}>Github</Link></Button>
-            <Button color="inherit"><Link to="/blogs" className={classes.links}>Facebook</Link></Button>
-            <Button color="inherit"><Link to="/contact" className={classes.links}>Medium</Link></Button>
+            <CardActionArea className={classes.Icons}>
+            <Icon color="inherit" className="fab fa-linkedin"> <a href="https://www.linkedin.com/in/dapperdave1914/"></a> </Icon>
+            <Icon color="inherit" className="fab fa-github"><a href=""></a></Icon>
+            <Icon color="inherit" className="fab fa-facebook"><a href=""></a></Icon>
+            <Icon color="inherit" className="fab fa-medium"><a href="https://medium.com/@dlrayjr89"></a></Icon>
+            </CardActionArea>
         </Toolbar>
     </AppBar>
         </div>
