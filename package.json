@@ -8,6 +8,7 @@
     "axios": "^0.19.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "fg-loadcss": "^2.1.0",
     "helmet": "^3.22.0",
     "js-tokens": "^4.0.0",
     "keycode": "^2.2.0",
