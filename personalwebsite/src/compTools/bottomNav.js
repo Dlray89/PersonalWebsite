@@ -49,10 +49,10 @@ function NavBar(){
                site design &copy; 2020 dapthedev, inc
             </Typography>
             <CardActionArea className={classes.Icons}>
-            <Icon color="inherit" className="fab fa-linkedin"> <a href="https://www.linkedin.com/in/dapperdave1914/">LinkedIn</a> </Icon>
-            <Icon color="inherit" className="fab fa-github"><a href="https://medium.com/@dlrayjr89">GitHub</a></Icon>
-            <Icon color="inherit" className="fab fa-facebook"><a href="https://medium.com/@dlrayjr89">Facebook</a></Icon>
-            <Icon color="inherit" className="fab fa-medium"><a href="https://medium.com/@dlrayjr89">Medium</a></Icon>
+            <Icon color="inherit" className="fab fa-linkedin" />
+            <Icon color="inherit" className="fab fa-github" />
+            <Icon color="inherit" className="fab fa-facebook" />
+            <Icon color="inherit" className="fab fa-medium" />
             </CardActionArea>
         </Toolbar>
     </AppBar>
