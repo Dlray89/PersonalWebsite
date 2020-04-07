@@ -1,7 +1,7 @@
 import React from "react"
 import { loadCSS } from "fg-loadcss"
 import { makeStyles } from "@material-ui/core"
-import { AppBar, CardActionArea, Toolbar, Typography, Icon } from "@material-ui/core"
+import { AppBar, Toolbar, Typography, Icon } from "@material-ui/core"
 
 const useStyles = makeStyles((theme) => ({
     root:{
@@ -48,12 +48,12 @@ function NavBar(){
             <Typography className={classes.title} variant="body1" component="h1">
                site design &copy; 2020 dapthedev, inc
             </Typography>
-            <CardActionArea className={classes.Icons}>
+            <div className={classes.Icons}>
             <Icon color="inherit" className="fab fa-linkedin" />
             <Icon color="inherit" className="fab fa-github" />
             <Icon color="inherit" className="fab fa-facebook" />
             <Icon color="inherit" className="fab fa-medium" />
-            </CardActionArea>
+            </div>
         </Toolbar>
     </AppBar>
         </div>
