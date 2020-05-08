@@ -39,26 +39,13 @@ class Contact extends React.Component{
         
             name:"",
             email:"",
+            phoneNumber:"",
             comment:""
         }
     }
 
 
-    changeHandler = e => {
-        this.setState({[e.target.name] : e.target.value})
-    }
 
-    submitHandle = e => {
-        e.preventDefault()
-        axios
-        .post("http://localhost:8000/comments", this.state)
-        .then(res => {
-            console.log(res)
-        })
-        .catch(error => {
-            console.log(error)
-        })
-    }
 
     render(){
         const { name, email, comment} = this.state 
