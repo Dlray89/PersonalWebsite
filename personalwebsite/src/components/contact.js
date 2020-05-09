@@ -27,7 +27,8 @@ class Contact extends Component {
                 return(
                     <div>
                         {CommentData.map((comment) => 
-                            <div>{comment.name}</div>
+                            <div>{comment.name}
+                            </div>
                             
                             )}
                     </div>
