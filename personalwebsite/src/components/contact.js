@@ -1,6 +1,8 @@
 import React,{ Component } from "react"
 import { Query } from "react-apollo"
 import gql from "graphql-tag"
+import Navbar from "../compTools/navbar"
+import CommentForm from "./commentForm"
 
 
 export const COMMENT_QUERY = gql `
@@ -26,10 +28,19 @@ class Contact extends Component {
 
                 return(
                     <div>
-                        {CommentData.map((comment) => 
-                            <div>{comment.name}</div>
+                        <Navbar />
+                        <div>
+                        {CommentData.map((contact) => 
+                            <div>{contact.name}
+                            <div>
+                                {contact.comment.map((message)=>
+                                    <p>{message.message}</p>)}
+                            </div>
+                            </div>
                             
                             )}
+                            </div>
+                            <CommentForm />
                     </div>
                 )
             }}
