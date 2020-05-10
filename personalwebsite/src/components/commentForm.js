@@ -1,77 +1,68 @@
-import React from "react"
-import axios from "axios"
-import { Button, Card, CardHeader, TextField, Typography, withStyles } from "@material-ui/core"
+import React, { Component } from "react"
+import { Mutation } from "react-apollo"
+import { COMMENT_QUERY } from "./contact"
+import gql from "graphql-tag"
 
-
-const styles = theme => ({
-    root:{
-        width:"30%", 
-        margin:"3% auto",
-        border:"solid 1px #333333",
-        [theme.breakpoints.down("sm")]:{
-            width:"90%",
-        }
-    },
-    Form:{
-        padding:"2%",
-       
-    },
-    Button:{
-        border:"solid 1px #dd1818",
-        marginTop:"3%",
-        color:"#dd1818"
-    },
-    TextField:{
-        border:"solid 1px #dd1818",
-        margin:" 2% 0 0 0",
-        color:"#dd1818"
+const COMMENT_MUTATION = gql`
+mutation newNote(
+  $name:String!, 
+  $email:String! 
+  $phone: String!,
+$message:String!) {
+  createContact(data:{name:$name,email:$email,phoneNumber:$phone, comment:{create:{message:$message}}}){
+    id
+    name
+    email
+    phoneNumber
+    comment {
+      message
     }
-})
+  }
+  
+  }
+`
 
-
-
-
-class Contact extends React.Component{
-    constructor(props){
-        super(props)
-
-        this.state = {
-        
-            name:"",
-            email:"",
-            phoneNumber:"",
-            comment:""
-        }
+class NewComment extends Component {
+    state = {
+        name: "",
+        email: "",
+        phone: "",
+        comment: [
+            {
+                message: ""
+            }
+        ]
     }
 
-
-
-
-    render(){
-        const { name, email, comment} = this.state 
-
-        const { classes } = this.props
-        
-        return(
+    render() {
+        const { name, email, phone, message } = this.state
+        return (
             <div>
-                <Card className={classes.root}>
-                <CardHeader style={{border:"solid 1px #333333", background:"linear-gradient(to right, #333333, #dd1818)", color:"white"}} title="Need to reach me?" subheader="Email: dlrayjr89@gmail.com - Phone: (614)-681.0179"/>
-                <Typography variant="h5" component="h1" >
-                    Drop me a comment
-                </Typography>
-                <form onSubmit={this.submitHandle} className={classes.Form}>
-                <TextField className={classes.TextField} variant="outlined" type="text" label="Name" name="name" value={name} onChange={this.changeHandler} /><br />
-                <TextField className={classes.TextField}  variant="outlined"  type="email" label="Email" name="email" value={email} onChange={this.changeHandler} /><br />
-                <TextField className={classes.TextField}  variant="outlined"  type="text" label="Comment" name="comment" value={comment} onChange={this.changeHandler} /><br />
-                <Button className={classes.Button} type="submit" variant="outlined" color="primary">POST</Button>
+                <form>
+                    <p>Comment here</p>
+                    <input value={name} onChange={e => this.setState({ name: e.target.value })} placeholder="Full Name" />
+
+                    <input value={email} type="email" onChange={e => this.setState({ email: e.target.value })} placeholder="Email" />
+
+
+                    <input value={phone} type="text" onChange={e => this.setState({ phone: e.target.value})} placeholder="Phone Number" />
+
+                    <input value={message} type="text" onChange={e => this.setState({ message: e.target.value})} placeholder="Message" />
+
+                    <Mutation mutation={COMMENT_MUTATION}
+                    variables={{name, email,phone,message}}
+                    refetchQueries={[
+                        {
+                            query: COMMENT_QUERY
+                        }
+                    ]}>
+                    {postMutation => <button onClick={postMutation}>Create</button>}
+
+                    </Mutation>
                 </form>
-                
-                    
-                </Card>
             </div>
         )
     }
 }
 
-
-export default withStyles(styles, { withTheme: true})(Contact)
+export default NewComment
