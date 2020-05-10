@@ -1,6 +1,6 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core"
-import { AppBar, Toolbar, Typography, Icon } from "@material-ui/core"
+import { AppBar, Toolbar, Typography } from "@material-ui/core"
 import FacebookIcon from '@material-ui/icons/Facebook'
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';

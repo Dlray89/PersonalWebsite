@@ -42,17 +42,17 @@ class NewComment extends Component {
                 <Card style={{width:"40%", margin:"3% auto", textAlign:"center"}}>
                     <CardHeader title="Contact Me" />
                     <CardContent>
-                        <TextField variant="outlined" value={name} onChange={e => this.setState({ name: e.target.value })} placeholder="Full Name" />
+                        <TextField style={{width:"70%"}} variant="outlined" value={name} onChange={e => this.setState({ name: e.target.value })} placeholder="Full Name" />
                          <br/>
 
-                        <TextField variant="outlined" value={email} type="email" onChange={e => this.setState({ email: e.target.value })} placeholder="Email" />
+                        <TextField style={{width:"70%", margin:"2% 0"}} variant="outlined" value={email} type="email" onChange={e => this.setState({ email: e.target.value })} placeholder="Email" />
                           <br/>
 
 
-                        <TextField variant="outlined" value={phone} type="text" onChange={e => this.setState({ phone: e.target.value })} placeholder="Phone Number" />
+                        <TextField style={{width:"70%"}} variant="outlined" value={phone} type="text" onChange={e => this.setState({ phone: e.target.value })} placeholder="Phone Number" />
                           <br/>
 
-                        <TextField variant="outlined" value={message} type="text" onChange={e => this.setState({ message: e.target.value })} placeholder="Message" />
+                        <TextField style={{width:"70%", margin:"2% 0"}} multiline rows={6} variant="outlined" value={message} type="text" onChange={e => this.setState({ message: e.target.value })} placeholder="Message" />
                     </CardContent>
 
 
