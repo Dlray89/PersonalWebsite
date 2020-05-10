@@ -4,9 +4,9 @@ import {Card,CardActionArea, CardActions, CardContent, CardMedia, Button, Typogr
 import Navbar from "../compTools/navbar"
 import Bottomnav from "../compTools/bottomNav"
 import Rick from "../images/rick.PNG"
-import ToDo from "../images/todo.PNG"
+import Port from "../images/port.PNG"
 import Sauti from "../images/sauti.PNG"
-import Project from "../images/ProjectMY.PNG"
+import Project from "../images/Protask.PNG"
 import "./project.css"
 
 
@@ -100,22 +100,22 @@ export default function Projects() {
       <CardActionArea>
         <CardMedia
           component="img"
-          alt="The ToDo List"
+          alt=" Port "
           height="140"
-          src={ToDo}
-          title="The ToDo List"
+          src={Port}
+          title="Port"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            The ToDo list: powered by Javascript
+            Personal Portfolio
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-           The ToDo list: powered by Javascript
+           Personal Portfolio
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary" href="https://hungry-meninsky-73a0d3.netlify.com/">
+        <Button size="small" color="primary" href="http://dapthedev.com">
           Visit site
         </Button>
         <Button size="small" color="primary">
@@ -165,15 +165,15 @@ export default function Projects() {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            ProjectMY
+            ProTask Project
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-           ProjectMY application coming soon!
+           ProTask is still in development
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary" href="*">
+        <Button size="small" color="primary" href="https://pro-task-hddntv8dt.now.sh/">
           Visit site
         </Button>
         <Button size="small" color="primary">
