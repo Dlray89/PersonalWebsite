@@ -74,7 +74,7 @@ export default function TechTabs() {
         <Tab label="Back-End" {...a11yProps(1)} />
 
         <Tab label="Tools" {...a11yProps(2)} />
-        <Tab label="Social Media" {...a11yProps(3)} />
+        <Tab label="Terminal's" {...a11yProps(3)} />
       </Tabs>
       <TabPanel value={value} index={0}>
         -HTML3 <br />
@@ -89,11 +89,14 @@ export default function TechTabs() {
         -Node.js <br />
         -Express.js
         <br />
-        -JSON web tokens
-        <br />
-        -Password hashing
-        <br />
+       
         -Back-end Middlewear
+        <br />
+        -GraphQL
+        <br />
+        -Apollo
+        <br />
+        -Prisma
       </TabPanel>
       <TabPanel value={value} index={2}>
         Styling Tools:
@@ -107,7 +110,11 @@ export default function TechTabs() {
         Gitpod
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Item Tfour
+        Linux <br />
+        Ubuntu <br />
+        Docker <br />
+        Git Bash <br />
+        Windows powershell
       </TabPanel>
     </div>
   );

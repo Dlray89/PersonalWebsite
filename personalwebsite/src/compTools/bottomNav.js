@@ -1,6 +1,9 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core"
 import { AppBar, Toolbar, Typography, Icon } from "@material-ui/core"
+import FacebookIcon from '@material-ui/icons/Facebook'
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 const useStyles = makeStyles((theme) => ({
     root:{
@@ -41,13 +44,16 @@ function NavBar(){
     <AppBar className={classes.Appbar} position="static">
         <Toolbar>
             <Typography className={classes.title} variant="body1" component="h1">
-               site design &copy; 2020 dapthedev, inc
+               &copy; 2020 DapTheDev        
             </Typography>
             <div className={classes.Icons}>
-            <Icon color="inherit" className="fab fa-linkedin" />
-            <Icon color="inherit" className="fab fa-github" />
-            <Icon color="inherit" className="fab fa-facebook" />
-            <Icon color="inherit" className="fab fa-medium" />
+            <a style={{textDecoration:"none", color:"white"}} href="https://www.facebook.com/ImodelIspeak15"><FacebookIcon /></a> 
+
+
+            <a style={{textDecoration:"none", color:"white"}} href="https://www.linkedin.com/in/dapperdave1914/"><LinkedInIcon /></a>
+
+            <a style={{textDecoration:"none", color:"white"}} href="https://github.com/Dlray89"><GitHubIcon /></a>
+            
             </div>
         </Toolbar>
     </AppBar>

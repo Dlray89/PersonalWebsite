@@ -65,35 +65,27 @@ export default function TabsWrappedLabel() {
         <Tabs value={value} onChange={handleChange} aria-label="wrapped label tabs example">
           <Tab
             value="one"
-            label="The Journey"
+            label="Hi, Im Dave"
             wrapped
             {...a11yProps('one')}
           />
-          <Tab value="two" label="The Dream" {...a11yProps('two')} />
-          <Tab value="three" label="The experience" {...a11yProps('three')} />
+          <Tab value="two" label="Career Goals" {...a11yProps('two')} />
+          <Tab value="three" label="Why Me?" {...a11yProps('three')} />
         </Tabs>
       </AppBar>
       <TabPanel className={classes.panel} value={value} index="one">
         <Typography variant="body1">
-            The journey that lead me to this day have been simply wonderful. The pass few months
-            I have pulled up my pants up, tucked in my shoe laces and got straight to business. Six months
-            ago I start looking at Web development due to me developing my own modeling portfolio. I must admit
-            that I was highly curious and very interested in learning more. So I taught myself HTML5 and CSS3 to start off, 
-            then when I got to Javascript that when I realized that I need help if I wanted to be successful. So I enrolled into Lambda's
-            9 month extensive fullstack web development course and my life changed forever!
+           My name is David L. Ray Jr and I am a software developer. 
+I create and develop beautiful and dynamic applications for users so they can enhance their day to day life. The applications I develop will help people reach for resources that are hard to get while providing a creative platform for users to express themselves online. Now you might ask what makes me different from other other developers  and that's an easy question to answer. I am BOLD with a curiosity like no other when it comes to life and looking for solutions to help the world or person reach their potential in life. I let my creativity take over and that's what leads my vision for success along with having a lot of zest to getting the job done.
+
 
         </Typography>
       </TabPanel>
       <TabPanel value={value} index="two">
-        Programming is definiely a dream that has came true for me.I now have the ability to create beauitful and
-        dynamic web applications both front and backend. I honestly couldn't be more proud of myself on how far I've came with pursuiting my education
-        in the tech field. Lambda is a group of elite tech warriors and they have helped me progressed so much on new and exisising
-        skills. They have a great abundance of resoruces, mentors, and career coaches.
+       My future goals are simple. I want to become a software developer for an organization that provides growth and has a lot of room to be creative. Soon after that I want to become a leader of that company to teach and show others so they can grow in their respective roles. Long term I want to own my own company or get into the cyber security sector of the technology industry.
       </TabPanel>
       <TabPanel value={value} index="three">
-        The experience has been wonderful and very challenging for the most part. There were times that I wanted to give up because of how hard the program was.
-        Then my passion kicked in and slapped me upside my head and said "YOU GOT THIS"! No matter how hard the projects was my passion got even stronger and stronger
-        by the day. I WILL BECOME A WEB DEVELOPER and nothing will get in my was from achieving this dream.
+      I would be a great fit for any company due to my ability to show others different resources to get stronger as a person.Not only that but to motivate and inspire people to go after their dreams and passions. People can learn dedication and leadership from me just by watching me show others.. You want to hire me because not only am I a funny guy but very empathetic to people and their situation. This allows me to understand what my managers, co-workers, family, friends, clients, etc want in life and I can provide a solution on how to get there. If self motivation and dedication was a human being walking around, it would be me,
       </TabPanel>
     </div>
   );

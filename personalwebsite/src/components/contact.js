@@ -3,11 +3,12 @@ import { Query } from "react-apollo"
 import gql from "graphql-tag"
 import Navbar from "../compTools/navbar"
 import CommentForm from "./commentForm"
+import { Card, Avatar, CardHeader, CardContent } from "@material-ui/core"
 
 
 export const COMMENT_QUERY = gql `
 query AllQueries{
-  contacts {
+  contacts(last: 10){
     name
     comment {
       message
@@ -29,18 +30,25 @@ class Contact extends Component {
                 return(
                     <div>
                         <Navbar />
+                        <CommentForm />
                         <div>
                         {CommentData.map((contact) => 
-                            <div>{contact.name}
+                            <Card style={{border:"solid 2px red", width:"30%", textAlign:"center", margin:"0 auto"}}>
+                            <Avatar style={{margin:"0 auto"}} />
+                            <CardHeader title={contact.name} />
+                            
                             <div>
+                                <CardContent>
                                 {contact.comment.map((message)=>
-                                    <p>{message.message}</p>)}
+                                    <p>Comment: <br/>
+                                    {message.message}</p>)}
+                                    </CardContent>
                             </div>
-                            </div>
+                            </Card>
                             
                             )}
                             </div>
-                            <CommentForm />
+                            
                     </div>
                 )
             }}

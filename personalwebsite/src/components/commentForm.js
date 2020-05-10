@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { Mutation } from "react-apollo"
 import { COMMENT_QUERY } from "./contact"
 import gql from "graphql-tag"
+import { Card, CardHeader, CardContent, TextField, Button } from "@material-ui/core"
 
 const COMMENT_MUTATION = gql`
 mutation newNote(
@@ -38,28 +39,34 @@ class NewComment extends Component {
         const { name, email, phone, message } = this.state
         return (
             <div>
-                <form>
-                    <p>Comment here</p>
-                    <input value={name} onChange={e => this.setState({ name: e.target.value })} placeholder="Full Name" />
+                <Card style={{width:"40%", margin:"3% auto", textAlign:"center"}}>
+                    <CardHeader title="Contact Me" />
+                    <CardContent>
+                        <TextField variant="outlined" value={name} onChange={e => this.setState({ name: e.target.value })} placeholder="Full Name" />
+                         <br/>
 
-                    <input value={email} type="email" onChange={e => this.setState({ email: e.target.value })} placeholder="Email" />
+                        <TextField variant="outlined" value={email} type="email" onChange={e => this.setState({ email: e.target.value })} placeholder="Email" />
+                          <br/>
 
 
-                    <input value={phone} type="text" onChange={e => this.setState({ phone: e.target.value})} placeholder="Phone Number" />
+                        <TextField variant="outlined" value={phone} type="text" onChange={e => this.setState({ phone: e.target.value })} placeholder="Phone Number" />
+                          <br/>
 
-                    <input value={message} type="text" onChange={e => this.setState({ message: e.target.value})} placeholder="Message" />
+                        <TextField variant="outlined" value={message} type="text" onChange={e => this.setState({ message: e.target.value })} placeholder="Message" />
+                    </CardContent>
+
 
                     <Mutation mutation={COMMENT_MUTATION}
-                    variables={{name, email,phone,message}}
-                    refetchQueries={[
-                        {
-                            query: COMMENT_QUERY
-                        }
-                    ]}>
-                    {postMutation => <button onClick={postMutation}>Create</button>}
+                        variables={{ name, email, phone, message }}
+                        refetchQueries={[
+                            {
+                                query: COMMENT_QUERY
+                            }
+                        ]}>
+                        {postMutation => <Button onClick={postMutation} variant="outlined" style={{margin:"2% 0", width:"40%"}}>Create</Button>}
 
                     </Mutation>
-                </form>
+                </Card>
             </div>
         )
     }
