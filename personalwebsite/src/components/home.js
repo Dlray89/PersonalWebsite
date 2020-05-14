@@ -75,7 +75,7 @@ const useStyles = makeStyles({
         display:"flex",
         justifyContent: "space-evenly",
         alignContent:"center",
-        width:"80%",
+        width:"60%",
         margin:"0 auto"
     },
     skillsDivider:{
@@ -163,16 +163,25 @@ export default function TemporaryDrawer() {
 
 
                 <div >
-                    <Typography>Tech Arsenal</Typography>
+                   
+
                     <div className={classes.skillContainer}>
                         <div>
-                        <Typography>FRONT-END</Typography>
+                        <Typography>FRONT-END SKILLS</Typography>
+                        <div style={{display:"flex", flexDirection:"column"}}>
+                        <Icon className="fab fa-html5" />
+                        <Icon className="fab fa-css3" />
+                        <Icon className="fab fa-less" />
                         <Icon className ="fab fa-react" />
-                            </div>
+                        </div>
+                        </div>
                 <Divider className={classes.skillsDivider} orientation="vertical" flexItem />
                         <div>
-                        <Typography>BACK-END</Typography>
-                        <Typography>Back end skill here</Typography>
+                            <div>
+                                <Typography>BACK-END SKILLS</Typography>
+                                <Icon className="fab fa-node"/>
+
+                            </div>                        
                         </div>
                     </div>
                     
