@@ -1,128 +1,185 @@
-import React from "react";
-import NavBar from "../compTools/navbar";
-import BottomNav from "../compTools/bottomNav"
-import {
-  Card,
-  Typography
-} from "@material-ui/core";
-import { makeStyles } from "@material-ui/core";
-import Techtabs from "../compTools/tabs";
-import IntroTabs from "../compTools/introTabs";
-import ResumeExpansion from "../compTools/resumeexpansion"
+import React from 'react';
+import clsx from 'clsx';
+import { AppBar, Toolbar, Typography, Drawer, Button, List, Divider, ListItem, ListItemIcon, ListItemText, makeStyles, Icon } from '@material-ui/core';
 import "./home.css"
+//icons
+import HomeIcon from '@material-ui/icons/Home';
+import CodeIcon from '@material-ui/icons/Code';
+import MenuIcon from '@material-ui/icons/Menu';
+import { loadCSS } from 'fg-loadcss';
+
+
+//pic upload
+import LOGO from "../images/NEWLOGO.png"
 
 
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    border: "solid 2px black",
-    background: "linear-gradient(to bottom, #1d4350, #a43931)"
-  },
-  intro:{
-    color:"#dd1818",
-  },
-  CardHeader: {
-    textAlign: "center"
-  },
-  Cardbox: {
-    border: "solid 1px black",
-    width: "40%",
-    boxSizing: "border-box",
-    background: "linear-gradient(to top, #333333, #dd1818);",
-    margin:" 0 auto",
-    [theme.breakpoints.down("sm")] : {
-      width:"90%"
+const useStyles = makeStyles({
+    list: {
+        width: 250,
+    },
+    fullList: {
+        width: 'auto',
+    },
+    navTitle: {
+        fontSize: "2rem",
+        textAlign: "center",
+        margin: "0 auto",
+
+    },
+    Container: {
+        margin: "3% 0"
+    },
+    LOGO: {
+        width: "20%",
+        border: "solid 2px #4a6595",
+        borderRadius: "100%",
+
+    },
+    intro: {
+        display: "flex",
+        justifyContent: "space-evenly",
+        alignContent: "center"
+    },
+    introText: {
+        border: "solid 2px #4a6595",
+        width: "50%",
+        padding: "3%",
+        background: "#79a5f2",
+        color: "white",
+        textAlign: "center",
+        borderRadius:"10px",
+        '&:hover': {
+            background: "#4a6595",
+            color: "white",
+            border: "solid 2px #79a5f2"
+
+        }
+
+    },
+    divider: {
+        background: "#4a6595",
+        width: "90%",
+        margin: " 2% auto",
+        
+    },
+    fullstack:{
+        textAlign:"center",
+        fontSize:"1rem",
+        borderLeft:"solid 2px #4a6596",
+        borderRight:"solid 2px #4a6596",
+        width:"20%",
+        margin:"0 auto"
+    },
+    skillContainer:{
+        display:"flex",
+        justifyContent: "space-evenly",
+        alignContent:"center",
+        width:"80%",
+        margin:"0 auto"
+    },
+    skillsDivider:{
+        background:"#4a6596"
     }
+
+});
+
+export default function TemporaryDrawer() {
+
     
-  },
-  Cardbox2: {
-    border: "solid 2px #333333",
-    width: "40%",
-    background: "linear-gradient(to left, #333333, #dd1818);",
-    margin:"0 auto",
-    [theme.breakpoints.down("sm")] : {
-      width:"90%"
-    }
-  },
-  title: {
-    padding: "3%",
-    textAlign: "center",
-    textDecoration: "underline"
-  },
-  subtitle: {
-    borderBottom: "solid 1px black",
-    padding: "1%",
-    textAlign: "center"
-  },
-  body1: {
-    border: "solid 2px red",
-    margin: "0 auto"
-  },
-  skillsTitle: {
-    border: "solid 1px #333333",
-    textAlign: "center",
-    padding: "3%",
-    background: "linear-gradient(to left, #333333, #dd1818);",
-    color:"white"
-  },
-  subtitle2: {
-    padding: "1%",
-    border: "solid 2px blue",
-    background: "linear-gradient(to left, #333333, #dd1818);"
-  },
-  resumeTitle:{
-    border: "solid 2px yellow",
-    width:"43%",
-    margin:"2% auto"
-  }
- 
-}));
+    const classes = useStyles();
+    const [state, setState] = React.useState({ left: false });
 
-function Home() {
-  const classes = useStyles();
-  return (
-    <div className={classes.root}>
-      <NavBar />
+    React.useEffect(() => {
+    const node = loadCSS(
+      'https://use.fontawesome.com/releases/v5.12.0/css/all.css',
+      document.querySelector('#font-awesome-css'),
+    );
 
-      <div className="introPanel">
-        <Typography className={classes.intro} variant="h2" component="h1">
-          TECH PORTFOLIO
-        </Typography>
+    return () => {
+      node.parentNode.removeChild(node);
+    };
+  }, []);
 
-       
-      </div>
+    const toggleDrawer = (anchor, open) => (event) => {
+        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+            return;
+        }
 
-      <div className={classes.CardContainer}>
+        setState({ ...state, [anchor]: open });
+    };
 
-        <Card className={classes.Cardbox}>
-          <Typography className={classes.title} variant="h5">
-            Career Aspriations
-          </Typography>
+    const list = (anchor) => (
+        <div
+            className={clsx(classes.list, {
+                [classes.fullList]: anchor === 'top' || anchor === 'bottom',
+            })}
+            role="presentation"
+            onClick={toggleDrawer(anchor, false)}
+            onKeyDown={toggleDrawer(anchor, false)}
+        >
+            <List>
+                {['Home', 'Projects'].map((text, index) => (
+                    <ListItem button key={text}>
+                        <ListItemIcon>{index % 2 === 0 ? <HomeIcon /> : <CodeIcon />}</ListItemIcon>
+                        <ListItemText primary={text} />
+                    </ListItem>
+                ))}
+            </List>
+            <Divider />
 
-          <div className={classes.subtitle}>
-            <IntroTabs />
-          </div>
+        </div>
+    );
 
-          <br />
-        </Card>
+    return (
         <div>
-          <ResumeExpansion />
+            {['left'].map((anchor) => (
+
+                <AppBar position="static" key={anchor}>
+                    <Toolbar >
+                        <MenuIcon onClick={toggleDrawer(anchor, true)} />
+                        <Typography className={classes.navTitle} component="h2">David Ray Jr</Typography>
+                        <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
+                            {list(anchor)}
+                        </Drawer>
+                    </Toolbar>
+                </AppBar>
+
+            ))}
+            <div className={classes.Container}>
+               <Typography className={classes.fullstack}>FULL STACK WEB DEVELOPER</Typography> 
+
+                <Divider className={classes.divider} />
+
+
+                <div className={classes.intro}>
+                    <img className={classes.LOGO} src={LOGO} />
+                    <Typography className={classes.introText}>
+                        My name is David l Ray Jr and I am a software developer.
+                        I create and develop beautiful and dynamic applications for users so they can enhance their day to day life. The applications I develop will help people reach for resources that are hard to get while providing a creative platform for users to express themselves online. Now you might ask what makes me different from other other developers  and that's an easy question to answer. I am BOLD with a curiosity like no other when it comes to life and looking for solutions to help the world or person reach their potential in life. I let my creativity take over and that's what leads my vision for success along with having a lot of zest to getting the job done.
+                    </Typography>
+                </div>
+                <Divider className={classes.divider} />
+
+
+                <div >
+                    <Typography>Tech Arsenal</Typography>
+                    <div className={classes.skillContainer}>
+                        <div>
+                        <Typography>FRONT-END</Typography>
+                        <Icon className ="fab fa-react" />
+                            </div>
+                <Divider className={classes.skillsDivider} orientation="vertical" flexItem />
+                        <div>
+                        <Typography>BACK-END</Typography>
+                        <Typography>Back end skill here</Typography>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
 
-        <Card className={classes.Cardbox2}>
-          <Typography variant="h5" className={classes.skillsTitle}>
-            Fullstack Tech Arsenal
-          </Typography>
-
-          <div>
-            <Techtabs />
-          </div>
-        </Card>
-      </div>
-
-     
-      <BottomNav />
-    </div>
-  );
+    );
+    
 }
-export default Home;
