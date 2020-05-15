@@ -181,7 +181,7 @@ export default function TemporaryDrawer() {
                     <Typography>FRONT-END SKILLS</Typography>
                         <div className={classes.FE}>
                         
-                        <div style={{display:"flex", flexDirection:"row", flexWrap:"wrap", justifyContent:"space-between", border:"solid 2px red", width:"70%", margin:"0 auto"}}>
+                        <div style={{display:"flex", flexDirection:"row", flexWrap:"wrap", justifyContent:"space-between", width:"70%", margin:"0 auto"}}>
                      <img className={classes.ICONS} src={HTML}  />
                         <img src={CSS} className={classes.ICONS} />
                         
