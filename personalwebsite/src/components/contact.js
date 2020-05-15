@@ -1,18 +1,15 @@
 import React,{ Component } from "react"
 import { Query } from "react-apollo"
 import gql from "graphql-tag"
-import Navbar from "../compTools/navbar"
-import CommentForm from "./commentForm"
-import { Card, Avatar, CardHeader, CardContent } from "@material-ui/core"
+import { Card, CardHeader} from "@material-ui/core"
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Alert from '@material-ui/lab/Alert';
-import BottomNav from "../compTools/bottomNav"
 
 
 
 export const COMMENT_QUERY = gql `
 query AllQueries{
-  contacts(last: 10){
+  contacts(last: 4){
     name
     comment {
       message
@@ -34,26 +31,22 @@ class Contact extends Component {
 
                 return(
                     <div>
-                        <Navbar />
-                        <CommentForm />
+                      
                         <div>
                         {CommentData.map((contact) => 
-                            <Card style={{border:"solid 2px red", width:"30%", textAlign:"center", margin:"2% auto", display:"flex", justifyContent:"space-evenly"}}>
+                            <Card style={{border:"solid 2px red", width:"60%", height:"30vh", textAlign:"center", margin:"2% auto"}}>
                             
                             <CardHeader title={contact.name} />
                             
                             <div>
-                                <CardContent>
                                 {contact.comment.map((message)=>
                                     <p>Comment: <br/>
                                     {message.message}</p>)}
-                                    </CardContent>
                             </div>
                             </Card>
                             
                             )}
                             </div>
-                            <BottomNav />
                     </div>
                 )
             }}
