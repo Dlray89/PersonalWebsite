@@ -6,11 +6,17 @@ import "./home.css"
 import HomeIcon from '@material-ui/icons/Home';
 import CodeIcon from '@material-ui/icons/Code';
 import MenuIcon from '@material-ui/icons/Menu';
-import { loadCSS } from 'fg-loadcss';
+import HTML from "../Icons/HTML.png";
+import CSS from "../Icons/CSS.png";
+import JAVASCRIPT from "../Icons/JAVASCRIPT.png";
+import REDUX from "../Icons/REDUX.png"
+import REACT from "../Icons/REACT.png"
+import NODE from "../Icons/NODE.png"
 
 
 //pic upload
 import LOGO from "../images/NEWLOGO.png"
+import { textAlign } from '@material-ui/system';
 
 
 
@@ -79,8 +85,25 @@ const useStyles = makeStyles({
         margin:"0 auto"
     },
     skillsDivider:{
-        background:"#4a6596"
+        background:"#4a6596",
+        margin:" 0 20% 0 0"
+    },
+    FE:{
+        display:"flex",
+        flexDirection:"row",
+        alignContent:"center",
+        textAlign:"center"
+    },
+    ICONS: {
+        width:"5%",
+        margin:" 0 auto",
+    
+    },
+    ICONSDIVIDER:{
+        width:"30%",
+        margin:"0 auto"
     }
+
 
 });
 
@@ -90,16 +113,7 @@ export default function TemporaryDrawer() {
     const classes = useStyles();
     const [state, setState] = React.useState({ left: false });
 
-    React.useEffect(() => {
-    const node = loadCSS(
-      'https://use.fontawesome.com/releases/v5.12.0/css/all.css',
-      document.querySelector('#font-awesome-css'),
-    );
-
-    return () => {
-      node.parentNode.removeChild(node);
-    };
-  }, []);
+  
 
     const toggleDrawer = (anchor, open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -164,26 +178,23 @@ export default function TemporaryDrawer() {
 
                 <div >
                    
+                    <Typography>FRONT-END SKILLS</Typography>
+                        <div className={classes.FE}>
+                        
+                        <div style={{display:"flex", flexDirection:"row", flexWrap:"wrap", justifyContent:"space-between", border:"solid 2px red", width:"70%", margin:"0 auto"}}>
+                     <img className={classes.ICONS} src={HTML}  />
+                        <img src={CSS} className={classes.ICONS} />
+                        
+                        <img src={JAVASCRIPT} className={classes.ICONS} /> 
+                        <img src={REDUX} className={classes.ICONS} /> 
+                        <img src={REACT} className={classes.ICONS} /> 
+                        <img src={NODE} className={classes.ICONS} />
 
-                    <div className={classes.skillContainer}>
-                        <div>
-                        <Typography>FRONT-END SKILLS</Typography>
-                        <div style={{display:"flex", flexDirection:"column"}}>
-                        <Icon className="fab fa-html5" />
-                        <Icon className="fab fa-css3" />
-                        <Icon className="fab fa-less" />
-                        <Icon className ="fab fa-react" />
                         </div>
-                        </div>
-                <Divider className={classes.skillsDivider} orientation="vertical" flexItem />
-                        <div>
-                            <div>
-                                <Typography>BACK-END SKILLS</Typography>
-                                <Icon className="fab fa-node"/>
-
-                            </div>                        
-                        </div>
+               
                     </div>
+
+
                     
                 </div>
             </div>
