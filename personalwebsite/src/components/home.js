@@ -54,7 +54,7 @@ const useStyles = makeStyles({
         background: "#79a5f2",
         color: "white",
         textAlign: "center",
-        borderRadius:"10px",
+        borderRadius: "10px",
         '&:hover': {
             background: "#4a6595",
             color: "white",
@@ -67,41 +67,41 @@ const useStyles = makeStyles({
         background: "#4a6595",
         width: "90%",
         margin: " 2% auto",
-        
+
     },
-    fullstack:{
-        textAlign:"center",
-        fontSize:"1rem",
-        borderLeft:"solid 2px #4a6596",
-        borderRight:"solid 2px #4a6596",
-        width:"20%",
-        margin:"0 auto"
+    fullstack: {
+        textAlign: "center",
+        fontSize: "1rem",
+        borderLeft: "solid 2px #4a6596",
+        borderRight: "solid 2px #4a6596",
+        width: "20%",
+        margin: "0 auto"
     },
-    skillContainer:{
-        display:"flex",
+    skillContainer: {
+        display: "flex",
         justifyContent: "space-evenly",
-        alignContent:"center",
-        width:"60%",
-        margin:"0 auto"
+        alignContent: "center",
+        width: "60%",
+        margin: "0 auto"
     },
-    skillsDivider:{
-        background:"#4a6596",
-        margin:" 0 20% 0 0"
+    skillsDivider: {
+        background: "#4a6596",
+        margin: " 0 20% 0 0"
     },
-    FE:{
-        display:"flex",
-        flexDirection:"row",
-        alignContent:"center",
-        textAlign:"center"
+    FE: {
+        display: "flex",
+        flexDirection: "row",
+        alignContent: "center",
+        textAlign: "center"
     },
     ICONS: {
-        width:"5%",
-        margin:" 0 auto",
-    
+        width: "7%",
+        margin: " 0 auto",
+
     },
-    ICONSDIVIDER:{
-        width:"30%",
-        margin:"0 auto"
+    ICONSDIVIDER: {
+        width: "30%",
+        margin: "0 auto"
     }
 
 
@@ -109,11 +109,11 @@ const useStyles = makeStyles({
 
 export default function TemporaryDrawer() {
 
-    
+
     const classes = useStyles();
     const [state, setState] = React.useState({ left: false });
 
-  
+
 
     const toggleDrawer = (anchor, open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -161,7 +161,7 @@ export default function TemporaryDrawer() {
 
             ))}
             <div className={classes.Container}>
-               <Typography className={classes.fullstack}>FULL STACK WEB DEVELOPER</Typography> 
+                <Typography className={classes.fullstack}>FULL STACK WEB DEVELOPER</Typography>
 
                 <Divider className={classes.divider} />
 
@@ -177,29 +177,31 @@ export default function TemporaryDrawer() {
 
 
                 <div >
-                   
-                    <Typography>FRONT-END SKILLS</Typography>
-                        <div className={classes.FE}>
-                        
-                        <div style={{display:"flex", flexDirection:"row", flexWrap:"wrap", justifyContent:"space-between", width:"70%", margin:"0 auto"}}>
-                     <img className={classes.ICONS} src={HTML}  />
-                        <img src={CSS} className={classes.ICONS} />
-                        
-                        <img src={JAVASCRIPT} className={classes.ICONS} /> 
-                        <img src={REDUX} className={classes.ICONS} /> 
-                        <img src={REACT} className={classes.ICONS} /> 
-                        <img src={NODE} className={classes.ICONS} />
+                    <div className={classes.FE}>
+
+                        <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between", width: "70%", margin: "0 auto" }}>
+                            <img className={classes.ICONS} src={HTML} />
+                            <Divider orientation="vertical" />
+                            <img src={CSS} className={classes.ICONS} />
+                                <Divider orientation="vertical" />
+                            <img src={JAVASCRIPT} className={classes.ICONS} />
+                            <Divider orientation="vertical" />
+                            <img src={REDUX} className={classes.ICONS} />
+                            <Divider orientation="vertical" />
+                            <img src={REACT} className={classes.ICONS} />
+                            <Divider orientation="vertical" />
+                            <img src={NODE} className={classes.ICONS} />
 
                         </div>
-               
+
                     </div>
 
 
-                    
+
                 </div>
             </div>
         </div>
 
     );
-    
+
 }
